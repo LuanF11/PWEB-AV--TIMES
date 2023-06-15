@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="link-container">
+        <a class="link" href="/times">Visualizar times</a>
+    </div>
+    <div class="link-container">
+        <a class="link" href="/cadastrar-time">Cadastrar times</a>
+    </div>
+{% endblock %}

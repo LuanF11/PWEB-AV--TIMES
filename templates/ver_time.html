@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='ver-time.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="title">Detalhes do time:</div>
+
+        <div class="info">
+            <strong>Nome do time: </strong>{{time.nome}}
+        </div>
+        <div class="info">
+            <strong>Quantidade de Jogadores: </strong>{{time.quantidade}}
+        </div>
+        <div class="info">
+            <strong>Quantidade de gols: </strong>{{time.pontos}}
+        </div>
+
+        <a class="link" href="/times">Voltar para a lista</a>
+    </div>
+{% endblock %}

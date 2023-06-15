@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='cadastrar-editar.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <form action="/cadastrar-time" method="POST">
+        <label for="nome">Nome do time</label>
+        <input type="text" name="nome_time" required="Insira o nome do time" placeholder="Insira o nome do time"><br>
+        <label for="quantidade_jogadores">Quantidade de jogadores</label>
+        <input type="number" name="quantidade_jogadores" required="Insira a quantidade de jogadores no time" placeholder="Insira a quantidade de jogadores no time"><br>
+        <label for="pontos">Quantidade de gols</label>
+        <input type="number" name="pontos" placeholder="Insira a quantidade de gols"><br>
+        <input type="submit" value="Cadastrar">
+    </form>
+
+    <a href="/times">Voltar para a lista</a>
+    
+{% endblock %}

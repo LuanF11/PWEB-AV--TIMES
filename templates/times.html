@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='times.css') }}">
+{% endblock %}
+
+{% block content %}
+    
+    <table border="1px">
+        <thead>
+            <tr>
+            <th>Nome do time</th>
+            <th>Quantidade de jogadores</th>
+            <th>Quantidade de gols</th>
+            <th>Ações</th>
+            
+            </tr>
+        </thead>
+
+        {% if nenhum_time_cadastrado %}
+        <tbody>
+            <tr>
+                <td colspan="4" class="no-times-message">Nenhum time cadastrado.</td>
+            </tr>
+        </tbody>
+        {% endif %}
+
+        {% for times in time %}
+        <tbody>
+            <td>{{times.nome}}</td>
+            <td>{{times.quantidade}}</td>
+            <td>{{times.pontos}}</td>
+            <td>
+                <a href="/ver-time/{{ loop.index0 }}">Ver</a>
+                <a href="/editar-time/{{ loop.index0 }}">Editar</a>
+                <form action="/excluir-time/{{ loop.index0 }}" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                     <input type="submit" value="Excluir">
+                </form>
+            </td>
+        </tbody>
+        {% endfor %}
+
+    </table>
+
+    <a href="/cadastrar-time">Cadastrar times</a>
+    
+{% endblock %}
