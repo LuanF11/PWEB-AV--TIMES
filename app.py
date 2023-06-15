@@ -39,7 +39,7 @@ def ver_time(id):
     time = Times[id]
     return render_template('ver_time.html', time=time, titulo = 'Ver Time')
 
-@app.route('/editar-time/<int:id>', methods=['GET', 'POST'])
+@app.route('/editar-time/<int:id>', methods=['GET','POST'])
 def editar_time(id):
     if request.method == 'POST':
             if '_method' in request.form and request.form['_method'] == 'PUT':

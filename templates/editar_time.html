@@ -10,9 +10,9 @@
     <form action="/editar-time/{{time.id}}" method="POST">
         <input type="hidden" name="_method" value="PUT">
         <label for="nome">Nome do time</label>
-        <input type="text" name="nome_time" value="{{time.nome}}" required="Insira o nome do time" placeholder="Insira o nome do time">><br>
+        <input type="text" name="nome_time" value="{{time.nome}}" required placeholder="Insira o nome do time"><br>
         <label for="quantidade_jogadores">Quantidade de jogadores</label>
-        <input type="number" name="quantidade_jogadores" value="{{time.quantidade}}" required="Insira a quantidade de jogadores" placeholder="Insira a quantidade de jogadores"><br>
+        <input type="number" name="quantidade_jogadores" value="{{time.quantidade}}" required placeholder="Insira a quantidade de jogadores"><br>
         <label for="pontos">Quantidade de gols</label>
         <input type="number" name="pontos" value="{{time.pontos}}" placeholder="Insira a quantidade de gols"><br>
         <input type="submit" value="Editar">
